@@ -1,4 +1,6 @@
 ActiveAdmin.register Cause do
+
+ permit_params :description, :name, :goal_amount, :current_amount
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
