@@ -53,6 +53,22 @@ class MembershipsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @membership = Membership.find(params.fetch("id_to_remove"))
+
+    @membership.destroy
+
+    redirect_to("/users/#{@membership.user_id}", notice: "Membership deleted successfully.")
+  end
+
+  def destroy_row_from_cause
+    @membership = Membership.find(params.fetch("id_to_remove"))
+
+    @membership.destroy
+
+    redirect_to("/causes/#{@membership.cause_id}", notice: "Membership deleted successfully.")
+  end
+
   def destroy_row
     @membership = Membership.find(params.fetch("id_to_remove"))
 

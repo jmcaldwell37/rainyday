@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_membership/:id_to_remove", { :controller => "memberships", :action => "destroy_row" })
+  get("/delete_membership_from_cause/:id_to_remove", { :controller => "memberships", :action => "destroy_row_from_cause" })
+  get("/delete_membership_from_user/:id_to_remove", { :controller => "memberships", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -75,6 +77,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_customized_preference/:id_to_remove", { :controller => "customized_preferences", :action => "destroy_row" })
+  get("/delete_customized_preference_from_event/:id_to_remove", { :controller => "customized_preferences", :action => "destroy_row_from_event" })
+  get("/delete_customized_preference_from_goal/:id_to_remove", { :controller => "customized_preferences", :action => "destroy_row_from_goal" })
+  get("/delete_customized_preference_from_user/:id_to_remove", { :controller => "customized_preferences", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -94,6 +99,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_goal/:id_to_remove", { :controller => "goals", :action => "destroy_row" })
+  get("/delete_goal_from_user/:id_to_remove", { :controller => "goals", :action => "destroy_row_from_user" })
 
   #------------------------------
 

@@ -57,6 +57,30 @@ class CustomizedPreferencesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @customized_preference = CustomizedPreference.find(params.fetch("id_to_remove"))
+
+    @customized_preference.destroy
+
+    redirect_to("/users/#{@customized_preference.user_id}", notice: "CustomizedPreference deleted successfully.")
+  end
+
+  def destroy_row_from_goal
+    @customized_preference = CustomizedPreference.find(params.fetch("id_to_remove"))
+
+    @customized_preference.destroy
+
+    redirect_to("/goals/#{@customized_preference.goal_id}", notice: "CustomizedPreference deleted successfully.")
+  end
+
+  def destroy_row_from_event
+    @customized_preference = CustomizedPreference.find(params.fetch("id_to_remove"))
+
+    @customized_preference.destroy
+
+    redirect_to("/events/#{@customized_preference.event_id}", notice: "CustomizedPreference deleted successfully.")
+  end
+
   def destroy_row
     @customized_preference = CustomizedPreference.find(params.fetch("id_to_remove"))
 
