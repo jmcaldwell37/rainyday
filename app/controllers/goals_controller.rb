@@ -47,7 +47,7 @@ class GoalsController < ApplicationController
   def update_row
     @goal = Goal.find(params.fetch("id_to_modify"))
 
-    @goal.user_id = params.fetch("user_id")
+    
     @goal.description = params.fetch("description")
     @goal.name = params.fetch("name")
     @goal.d_or_s = params.fetch("d_or_s")
