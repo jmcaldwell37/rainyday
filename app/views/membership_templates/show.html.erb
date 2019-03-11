@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @membership.user_id %>
+        <% if @membership.user.present? %>
+          <a href="/users/<%= @membership.user_id %>">
+            <%= @membership.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display cause_id start -->
       <dd>
-        <%= @membership.cause_id %>
+        <% if @membership.cause.present? %>
+          <a href="/causes/<%= @membership.cause_id %>">
+            <%= @membership.cause.description %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display cause_id end -->
 

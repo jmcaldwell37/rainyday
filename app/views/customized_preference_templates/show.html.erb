@@ -34,7 +34,11 @@
       </dt>
       <!-- Display event_id start -->
       <dd>
-        <%= @customized_preference.event_id %>
+        <% if @customized_preference.event.present? %>
+          <a href="/events/<%= @customized_preference.event_id %>">
+            <%= @customized_preference.event.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display event_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @customized_preference.user_id %>
+        <% if @customized_preference.user.present? %>
+          <a href="/users/<%= @customized_preference.user_id %>">
+            <%= @customized_preference.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -61,7 +69,11 @@
       </dt>
       <!-- Display goal_id start -->
       <dd>
-        <%= @customized_preference.goal_id %>
+        <% if @customized_preference.goal.present? %>
+          <a href="/goals/<%= @customized_preference.goal_id %>">
+            <%= @customized_preference.goal.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display goal_id end -->
 

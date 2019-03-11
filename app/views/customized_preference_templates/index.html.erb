@@ -66,13 +66,21 @@
 
         <!-- Display customized_preference.event_id start -->
         <td>
-          <%= customized_preference.event.name %>
+          <% if customized_preference.event.present? %>
+            <a href="/events/<%= customized_preference.event.id %>">
+              <%= customized_preference.event.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display customized_preference.event_id end -->
 
         <!-- Display customized_preference.user_id start -->
         <td>
-          <%= customized_preference.user.email %>
+          <% if customized_preference.user.present? %>
+            <a href="/users/<%= customized_preference.user.id %>">
+              <%= customized_preference.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display customized_preference.user_id end -->
 
@@ -84,7 +92,11 @@
 
         <!-- Display customized_preference.goal_id start -->
         <td>
-          <%= customized_preference.goal.user_id %>
+          <% if customized_preference.goal.present? %>
+            <a href="/goals/<%= customized_preference.goal.id %>">
+              <%= customized_preference.goal.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display customized_preference.goal_id end -->
 

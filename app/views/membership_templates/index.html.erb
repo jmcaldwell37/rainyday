@@ -58,13 +58,21 @@
 
         <!-- Display membership.user_id start -->
         <td>
-          <%= membership.user.email %>
+          <% if membership.user.present? %>
+            <a href="/users/<%= membership.user.id %>">
+              <%= membership.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display membership.user_id end -->
 
         <!-- Display membership.cause_id start -->
         <td>
-          <%= membership.cause.description %>
+          <% if membership.cause.present? %>
+            <a href="/causes/<%= membership.cause.id %>">
+              <%= membership.cause.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display membership.cause_id end -->
 
