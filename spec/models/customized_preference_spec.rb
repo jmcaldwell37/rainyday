@@ -4,6 +4,8 @@ RSpec.describe CustomizedPreference, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:event) }
+
     it { should belong_to(:goal) }
 
     it { should belong_to(:user) }
