@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/memberships/new", { :controller => "memberships", :action => "new_form" })
   post("/create_membership", { :controller => "memberships", :action => "create_row" })
+  post("/create_membership_from_cause", { :controller => "memberships", :action => "create_row_from_cause" })
 
   # READ
   get("/memberships", { :controller => "memberships", :action => "index" })
@@ -66,6 +67,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/customized_preferences/new", { :controller => "customized_preferences", :action => "new_form" })
   post("/create_customized_preference", { :controller => "customized_preferences", :action => "create_row" })
+  post("/create_customized_preference_from_event", { :controller => "customized_preferences", :action => "create_row_from_event" })
+  post("/create_customized_preference_from_goal", { :controller => "customized_preferences", :action => "create_row_from_goal" })
 
   # READ
   get("/customized_preferences", { :controller => "customized_preferences", :action => "index" })

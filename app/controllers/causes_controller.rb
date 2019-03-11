@@ -6,6 +6,7 @@ class CausesController < ApplicationController
   end
 
   def show
+    @membership = Membership.new
     @cause = Cause.find(params.fetch("id_to_display"))
 
     render("cause_templates/show.html.erb")

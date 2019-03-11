@@ -34,6 +34,40 @@ class CustomizedPreferencesController < ApplicationController
     end
   end
 
+  def create_row_from_goal
+    @customized_preference = CustomizedPreference.new
+
+    @customized_preference.event_id = params.fetch("event_id")
+    @customized_preference.user_id = params.fetch("user_id")
+    @customized_preference.transaction_amount = params.fetch("transaction_amount")
+    @customized_preference.goal_id = params.fetch("goal_id")
+
+    if @customized_preference.valid?
+      @customized_preference.save
+
+      redirect_to("/goals/#{@customized_preference.goal_id}", notice: "CustomizedPreference created successfully.")
+    else
+      render("customized_preference_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_event
+    @customized_preference = CustomizedPreference.new
+
+    @customized_preference.event_id = params.fetch("event_id")
+    @customized_preference.user_id = params.fetch("user_id")
+    @customized_preference.transaction_amount = params.fetch("transaction_amount")
+    @customized_preference.goal_id = params.fetch("goal_id")
+
+    if @customized_preference.valid?
+      @customized_preference.save
+
+      redirect_to("/events/#{@customized_preference.event_id}", notice: "CustomizedPreference created successfully.")
+    else
+      render("customized_preference_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @customized_preference = CustomizedPreference.find(params.fetch("prefill_with_id"))
 

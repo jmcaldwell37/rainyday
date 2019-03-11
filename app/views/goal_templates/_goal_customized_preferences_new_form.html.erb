@@ -1,0 +1,49 @@
+<!-- Form customized_preference start -->
+<form action="/create_customized_preference_from_goal" method="post">
+<!-- Form customized_preference end -->
+
+  <!-- Label and input for event_id start -->
+  <div class="form-group">
+    <label for="event_id">
+      Event
+    </label>
+
+    <!-- Input for event_id start -->
+    <input type="text" id="event_id" name="event_id" class="form-control" value="<%= @customized_preference.event_id %>">
+    <!-- Input for event_id end -->
+  </div>
+  <!-- Label and input for event_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @customized_preference.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for transaction_amount start -->
+  <div class="form-group">
+    <label for="transaction_amount">
+      Transaction amount
+    </label>
+
+    <!-- Input for transaction_amount start -->
+    <input type="text" id="transaction_amount" name="transaction_amount" class="form-control" value="<%= @customized_preference.transaction_amount %>">
+    <!-- Input for transaction_amount end -->
+  </div>
+  <!-- Label and input for transaction_amount end -->
+
+  <!-- Label and input for goal_id start -->
+  <!-- Input for goal_id start -->
+  <input type="hidden" name="goal_id" value="<%= @goal.id %>">
+  <!-- Input for goal_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create customized preference
+  </button>
+</form>

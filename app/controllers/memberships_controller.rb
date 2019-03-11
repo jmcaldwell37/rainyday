@@ -32,6 +32,21 @@ class MembershipsController < ApplicationController
     end
   end
 
+  def create_row_from_cause
+    @membership = Membership.new
+
+    @membership.user_id = params.fetch("user_id")
+    @membership.cause_id = params.fetch("cause_id")
+
+    if @membership.valid?
+      @membership.save
+
+      redirect_to("/causes/#{@membership.cause_id}", notice: "Membership created successfully.")
+    else
+      render("membership_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @membership = Membership.find(params.fetch("prefill_with_id"))
 

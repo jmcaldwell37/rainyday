@@ -6,6 +6,7 @@ class GoalsController < ApplicationController
   end
 
   def show
+    @customized_preference = CustomizedPreference.new
     @goal = Goal.find(params.fetch("id_to_display"))
 
     render("goal_templates/show.html.erb")
