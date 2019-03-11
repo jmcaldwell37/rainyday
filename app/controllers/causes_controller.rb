@@ -1,6 +1,7 @@
 class CausesController < ApplicationController
   def index
-    @causes = Cause.page(params[:page]).per(10)
+    @q = Cause.ransack(params[:q])
+    @causes = @q.result(:distinct => true).includes(:memberships).page(params[:page]).per(10)
 
     render("cause_templates/index.html.erb")
   end

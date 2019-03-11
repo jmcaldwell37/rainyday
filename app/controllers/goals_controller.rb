@@ -10,7 +10,8 @@ class GoalsController < ApplicationController
   end
 
   def index
-    @goals = Goal.page(params[:page]).per(10)
+    @q = Goal.ransack(params[:q])
+    @goals = @q.result(:distinct => true).includes(:user, :customized_preferences).page(params[:page]).per(10)
 
     render("goal_templates/index.html.erb")
   end

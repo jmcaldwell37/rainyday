@@ -1,6 +1,7 @@
 class CustomizedPreferencesController < ApplicationController
   def index
-    @customized_preferences = CustomizedPreference.page(params[:page]).per(10)
+    @q = CustomizedPreference.ransack(params[:q])
+    @customized_preferences = @q.result(:distinct => true).includes(:user, :goal, :event).page(params[:page]).per(10)
 
     render("customized_preference_templates/index.html.erb")
   end
