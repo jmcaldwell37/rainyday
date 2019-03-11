@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for cause_id start -->
-    <input type="text" id="cause_id" name="cause_id" class="form-control" value="<%= @membership.cause_id %>">
+    <%= select_tag(:cause_id, options_from_collection_for_select(Cause.all, :id, :description, @membership.cause_id), :class => "form-control") %>
     <!-- Input for cause_id end -->
   </div>
   <!-- Label and input for cause_id end -->
