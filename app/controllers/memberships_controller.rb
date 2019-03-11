@@ -1,6 +1,6 @@
 class MembershipsController < ApplicationController
   def index
-    @memberships = Membership.all
+    @memberships = Membership.page(params[:page]).per(10)
 
     render("membership_templates/index.html.erb")
   end

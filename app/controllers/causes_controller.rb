@@ -1,6 +1,6 @@
 class CausesController < ApplicationController
   def index
-    @causes = Cause.all
+    @causes = Cause.page(params[:page]).per(10)
 
     render("cause_templates/index.html.erb")
   end
