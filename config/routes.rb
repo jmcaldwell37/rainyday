@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Cause resource:
+
+  # CREATE
+  get("/causes/new", { :controller => "causes", :action => "new_form" })
+  post("/create_cause", { :controller => "causes", :action => "create_row" })
+
+  # READ
+  get("/causes", { :controller => "causes", :action => "index" })
+  get("/causes/:id_to_display", { :controller => "causes", :action => "show" })
+
+  # UPDATE
+  get("/causes/:prefill_with_id/edit", { :controller => "causes", :action => "edit_form" })
+  post("/update_cause/:id_to_modify", { :controller => "causes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_cause/:id_to_remove", { :controller => "causes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Event resource:
 
   # CREATE
