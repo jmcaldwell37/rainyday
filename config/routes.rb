@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "goals#index"
   # Routes for the Membership resource:
 
   # CREATE
