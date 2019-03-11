@@ -1,0 +1,92 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All memberships
+    </h1>
+
+    <a href="/memberships/new" class="btn btn-block btn-outline-secondary">
+      Add a new membership
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Cause
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @memberships.each do |membership| %>
+      <tr>
+        <!-- Display membership.id start -->
+        <td>
+          <%= membership.id %>
+        </td>
+        <!-- Display membership.id end -->
+
+        <!-- Display membership.user_id start -->
+        <td>
+          <%= membership.user_id %>
+        </td>
+        <!-- Display membership.user_id end -->
+
+        <!-- Display membership.cause_id start -->
+        <td>
+          <%= membership.cause_id %>
+        </td>
+        <!-- Display membership.cause_id end -->
+
+        <!-- Display membership.created_at start -->
+        <td>
+          <%= time_ago_in_words(membership.created_at) %> ago
+        </td>
+        <!-- Display membership.created_at end -->
+
+        <!-- Display membership.updated_at start -->
+        <td>
+          <%= time_ago_in_words(membership.updated_at) %> ago
+        </td>
+        <!-- Display membership.updated_at end -->
+
+        <td>
+          <a href="/memberships/<%= membership.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

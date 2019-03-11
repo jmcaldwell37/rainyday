@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Membership resource:
+
+  # CREATE
+  get("/memberships/new", { :controller => "memberships", :action => "new_form" })
+  post("/create_membership", { :controller => "memberships", :action => "create_row" })
+
+  # READ
+  get("/memberships", { :controller => "memberships", :action => "index" })
+  get("/memberships/:id_to_display", { :controller => "memberships", :action => "show" })
+
+  # UPDATE
+  get("/memberships/:prefill_with_id/edit", { :controller => "memberships", :action => "edit_form" })
+  post("/update_membership/:id_to_modify", { :controller => "memberships", :action => "update_row" })
+
+  # DELETE
+  get("/delete_membership/:id_to_remove", { :controller => "memberships", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Cause resource:
 
   # CREATE

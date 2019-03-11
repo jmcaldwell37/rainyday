@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @membership.present? %>
+  <% if @membership.errors.any? %>
+    <% @membership.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new membership
+</h1>
+
+
+<hr>
+
+<!-- Form membership start -->
+<form action="/create_membership" method="post">
+<!-- Form membership end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @membership.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for cause_id start -->
+  <div class="form-group">
+    <label for="cause_id">
+      Cause
+    </label>
+
+    <!-- Input for cause_id start -->
+    <input type="text" id="cause_id" name="cause_id" class="form-control" value="<%= @membership.cause_id %>">
+    <!-- Input for cause_id end -->
+  </div>
+  <!-- Label and input for cause_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create membership
+  </button>
+</form>
+
+<hr>
+
+<a href="/memberships">
+  Go back
+</a>
