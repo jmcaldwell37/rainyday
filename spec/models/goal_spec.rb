@@ -4,6 +4,8 @@ RSpec.describe Goal, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:customized_preferences) }
+
     it { should belong_to(:user) }
 
     end
