@@ -1,23 +1,14 @@
-<!-- Form membership start -->
 <form action="/create_membership_from_cause" method="post">
-<!-- Form membership end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @membership.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for cause_id start -->
-  <!-- Input for cause_id start -->
   <input type="hidden" name="cause_id" value="<%= @cause.id %>">
-  <!-- Input for cause_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create membership

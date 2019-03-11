@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link membership start -->
       <div class="col">
         <a href="/memberships/<%= @membership.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit membership
         </a>
       </div>
-      <!-- Edit link membership end -->
 
-      <!-- Delete link membership start -->
       <div class="col">
         <a href="/delete_membership/<%= @membership.id %>" class="btn btn-block btn-outline-secondary">
           Delete membership
         </a>
       </div>
-      <!-- Delete link membership end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @membership.user.present? %>
           <a href="/users/<%= @membership.user_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Cause
       </dt>
-      <!-- Display cause_id start -->
       <dd>
         <% if @membership.cause.present? %>
           <a href="/causes/<%= @membership.cause_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display cause_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@membership.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@membership.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

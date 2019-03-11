@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @goal.customized_preferences.each do |customized_preference| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/customized_preferences/<%= customized_preference.id %>">
           <%= customized_preference.event_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_customized_preference_from_goal/<%= customized_preference.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="goal_customized_preferences_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "goal_templates/goal_customized_preferences_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

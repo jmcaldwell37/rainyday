@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @cause.memberships.each do |membership| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/memberships/<%= membership.id %>">
           <%= membership.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_membership_from_cause/<%= membership.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="cause_memberships_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "cause_templates/cause_memberships_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

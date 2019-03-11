@@ -5,33 +5,23 @@
 
 <hr>
 
-<!-- Form membership start -->
 <form action="/create_membership" method="post">
-<!-- Form membership end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @membership.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for cause_id start -->
   <div class="form-group">
     <label for="cause_id">
       Cause
     </label>
 
-    <!-- Input for cause_id start -->
     <%= select_tag(:cause_id, options_from_collection_for_select(Cause.all, :id, :description, @membership.cause_id), :class => "form-control") %>
-    <!-- Input for cause_id end -->
   </div>
-  <!-- Label and input for cause_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create membership
