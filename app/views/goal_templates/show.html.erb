@@ -13,17 +13,21 @@
 
       <!-- Edit link goal start -->
       <div class="col">
-        <a href="/goals/<%= @goal.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit goal
-        </a>
+        <% if current_user == @goal.user %>
+          <a href="/goals/<%= @goal.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit goal
+          </a>
+        <% end %>
       </div>
       <!-- Edit link goal end -->
 
       <!-- Delete link goal start -->
       <div class="col">
-        <a href="/delete_goal/<%= @goal.id %>" class="btn btn-block btn-outline-secondary">
-          Delete goal
-        </a>
+        <% if current_user == @goal.user %>
+          <a href="/delete_goal/<%= @goal.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete goal
+          </a>
+        <% end %>
       </div>
       <!-- Delete link goal end -->
     </div>
