@@ -1,0 +1,68 @@
+<h1>
+  Edit customized preference #<%= @customized_preference.id %>
+</h1>
+
+<hr>
+
+<!-- Form customized_preference start -->
+<form action="/update_customized_preference/<%= @customized_preference.id %>" method="post">
+<!-- Form customized_preference end -->
+
+  <!-- Label and input for event_id start -->
+  <div class="form-group">
+    <label for="event_id">
+      Event
+    </label>
+
+    <!-- Input for event_id start -->
+    <input type="text" id="event_id" name="event_id" class="form-control" value="<%= @customized_preference.event_id %>">
+    <!-- Input for event_id end -->
+  </div>
+  <!-- Label and input for event_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @customized_preference.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for transaction_amount start -->
+  <div class="form-group">
+    <label for="transaction_amount">
+      Transaction amount
+    </label>
+
+    <!-- Input for transaction_amount start -->
+    <input type="text" id="transaction_amount" name="transaction_amount" class="form-control" value="<%= @customized_preference.transaction_amount %>">
+    <!-- Input for transaction_amount end -->
+  </div>
+  <!-- Label and input for transaction_amount end -->
+
+  <!-- Label and input for goal_id start -->
+  <div class="form-group">
+    <label for="goal_id">
+      Goal
+    </label>
+
+    <!-- Input for goal_id start -->
+    <input type="text" id="goal_id" name="goal_id" class="form-control" value="<%= @customized_preference.goal_id %>">
+    <!-- Input for goal_id end -->
+  </div>
+  <!-- Label and input for goal_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update customized preference
+  </button>
+</form>
+
+<hr>
+
+<a href="/customized_preferences">
+  Go back
+</a>

@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Customized preference #<%= @customized_preference.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/customized_preferences" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link customized_preference start -->
+      <div class="col">
+        <a href="/customized_preferences/<%= @customized_preference.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit customized preference
+        </a>
+      </div>
+      <!-- Edit link customized_preference end -->
+
+      <!-- Delete link customized_preference start -->
+      <div class="col">
+        <a href="/delete_customized_preference/<%= @customized_preference.id %>" class="btn btn-block btn-outline-secondary">
+          Delete customized preference
+        </a>
+      </div>
+      <!-- Delete link customized_preference end -->
+    </div>
+
+    <dl>
+      <dt>
+        Event
+      </dt>
+      <!-- Display event_id start -->
+      <dd>
+        <%= @customized_preference.event_id %>
+      </dd>
+      <!-- Display event_id end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @customized_preference.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Transaction amount
+      </dt>
+      <!-- Display transaction_amount start -->
+      <dd>
+        <%= @customized_preference.transaction_amount %>
+      </dd>
+      <!-- Display transaction_amount end -->
+
+      <dt>
+        Goal
+      </dt>
+      <!-- Display goal_id start -->
+      <dd>
+        <%= @customized_preference.goal_id %>
+      </dd>
+      <!-- Display goal_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@customized_preference.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@customized_preference.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

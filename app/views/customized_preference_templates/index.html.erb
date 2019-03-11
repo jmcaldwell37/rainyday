@@ -1,0 +1,112 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All customized preferences
+    </h1>
+
+    <a href="/customized_preferences/new" class="btn btn-block btn-outline-secondary">
+      Add a new customized preference
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Event
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Transaction amount
+        </th>
+
+        <th>
+          Goal
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @customized_preferences.each do |customized_preference| %>
+      <tr>
+        <!-- Display customized_preference.id start -->
+        <td>
+          <%= customized_preference.id %>
+        </td>
+        <!-- Display customized_preference.id end -->
+
+        <!-- Display customized_preference.event_id start -->
+        <td>
+          <%= customized_preference.event_id %>
+        </td>
+        <!-- Display customized_preference.event_id end -->
+
+        <!-- Display customized_preference.user_id start -->
+        <td>
+          <%= customized_preference.user_id %>
+        </td>
+        <!-- Display customized_preference.user_id end -->
+
+        <!-- Display customized_preference.transaction_amount start -->
+        <td>
+          <%= customized_preference.transaction_amount %>
+        </td>
+        <!-- Display customized_preference.transaction_amount end -->
+
+        <!-- Display customized_preference.goal_id start -->
+        <td>
+          <%= customized_preference.goal_id %>
+        </td>
+        <!-- Display customized_preference.goal_id end -->
+
+        <!-- Display customized_preference.created_at start -->
+        <td>
+          <%= time_ago_in_words(customized_preference.created_at) %> ago
+        </td>
+        <!-- Display customized_preference.created_at end -->
+
+        <!-- Display customized_preference.updated_at start -->
+        <td>
+          <%= time_ago_in_words(customized_preference.updated_at) %> ago
+        </td>
+        <!-- Display customized_preference.updated_at end -->
+
+        <td>
+          <a href="/customized_preferences/<%= customized_preference.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
